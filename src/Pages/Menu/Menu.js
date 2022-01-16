@@ -95,13 +95,13 @@ function Menu() {
             <h1 className="size_16 line_22 color_black">Restaurant Special</h1>
           </Col>
         </Row>
-        //Carousel Component
+        {/* //Carousel Component */}
         <Row>
           <Col className="px-0">
             <MenuCarousel />
           </Col>
         </Row>
-        //Menu Item Component
+        {/* //Menu Item Component */}
         <div>
           <ItemList />
         </div>

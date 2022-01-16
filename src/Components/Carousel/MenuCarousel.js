@@ -67,7 +67,12 @@ function MenuCarousel() {
       <Carousel
         responsive={responsive}
         partialVisbile
-        removeArrowOnDeviceType={["tablet", "mobile"]}
+        removeArrowOnDeviceType={[
+          "tablet",
+          "mobile",
+          "desktop",
+          "superLargeDesktop",
+        ]}
       >
         {foodItems.map((data, index) => (
           <div
