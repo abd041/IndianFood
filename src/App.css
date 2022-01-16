@@ -1,0 +1,79 @@
+/* Nunito Sans Bold Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&family=Space+Grotesk&display=swap');
+
+/* 
+Headings used in the webapp */
+
+h1{
+font-family: Nunito Sans;
+font-style: normal;
+font-weight: bold;
+margin: 0px !important;
+}
+
+
+h2{
+  font-family: Nunito Sans;
+font-style: normal;
+font-weight: 600 !important;
+font-size: 14px !important;
+line-height: 19px !important;
+color: #FFFAE6;
+}
+/* 
+font sizes used in webapp */
+
+.size_20{
+  font-size: 20px;
+}
+.size_16{
+  font-size: 16px;
+}
+
+.size_10{
+  font-size: 10px;
+}
+
+.size_14{
+  font-size: 14px;
+}
+
+/* 
+Line height used in webapp */
+
+.line_27{
+  line-height: 27px;
+}
+.line_19{
+  line-height: 19px;
+}
+.line_22{
+  line-height: 22px;
+}
+
+.line_14{
+  line-height: 14px;
+}
+/* 
+colors used in webapp */
+
+.color_black{
+  color: #303030;
+}
+
+.color_blue_dark{
+  color: #4F0066;
+}
+
+.color_dark_black{
+  color: #000000;
+}
+
+.color_blue{
+  color:#0009E7
+}
+.color_white{
+  color: #FFFFFF;
+}
+
