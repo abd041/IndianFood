@@ -164,7 +164,7 @@ color: #FFC700;
 border-radius: 5px;
 padding-top: 12px;
 padding-bottom: 15px;
-margin-right: 20px;
+margin-right: 20px !important;
 
 }
 
@@ -271,7 +271,7 @@ left: 10px;
 .add_menu_txet{
   width: 45px;
   display: flex;
-  justify-content: end;
+  justify-content: end !important;
   margin-top: 3px;
 }
 
