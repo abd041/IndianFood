@@ -1,5 +1,5 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Row, Col, Button, Modal } from "react-bootstrap";
 import "./menu.css";
 
 //Images and logos used in this page
@@ -8,11 +8,13 @@ import foodItem from "../../Resources/Images/Menu/foodItem.svg";
 import menu_search from "../../Resources/Images/Menu/menu_search.svg";
 
 //Components in the Page
-
+import SearchModal from "../../Components/Modal/SearchModal.js";
 import MenuCarousel from "../../Components/Carousel/MenuCarousel";
 import ItemList from "../../Components/MenuItemList/ItemsList";
-
+import arrow from "../../Resources/Images/Menu/arrow.png";
 function Menu() {
+  const [smShow, setSmShow] = useState(false);
+  const [smShow_, setSmShow_] = useState(false);
   return (
     <Container>
       <div className="menu_page_main_wrapper">
@@ -81,7 +83,10 @@ function Menu() {
           </Col>
           <Col className="px-0">
             <div className="d-flex justify-content-end">
-              <div className="menu_toggler_input">
+              <div
+                className="menu_toggler_input"
+                onClick={() => setSmShow(true)}
+              >
                 <span>
                   <img src={menu_search} alt=".." />
                 </span>
@@ -103,9 +108,18 @@ function Menu() {
         </Row>
         {/* //Menu Item Component */}
         <div>
-          <ItemList />
+          <ItemList smShow_={smShow_} setSmShow_={setSmShow_} />
         </div>
+        <Row>
+          <Col className="View_Cart_btn d-flex justify-content-between align-items-center">
+            <button>View Cart</button>
+            <div>
+              <img src={arrow} alt="..." />
+            </div>
+          </Col>
+        </Row>
       </div>
+      <SearchModal smShow={smShow} setSmShow={setSmShow} />
     </Container>
   );
 }

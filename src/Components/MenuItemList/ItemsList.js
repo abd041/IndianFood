@@ -11,49 +11,63 @@ import menu_food_four from "../../Resources/Images/Menu/menu_food_four.png";
 import menu_food_five from "../../Resources/Images/Menu/menu_food_five.png";
 
 import menu_food_six from "../../Resources/Images/Menu/menu_food_six.png";
-function ItemsList() {
+
+import { Modal } from "react-bootstrap";
+function ItemsList({ smShow_, setSmShow_ }) {
   const ItemList = [
     {
+      id: 1,
       img: menu_food_one,
       title: "Palak Paneer",
       text: "Palak paneer is a classic curry dish",
       blueText: "more",
       Price: "₹ 350",
+      modalimg: menu_food_one,
     },
     {
+      id: 2,
       img: menu_food_two,
       title: "Chicken Cutlets",
       text: "PA cutlet is a piece of chicken breast",
       blueText: "more",
       Price: "₹ 200",
+      modalimg: menu_food_two,
     },
     {
+      id: 3,
       img: menu_food_three,
       title: "Rogan Josh",
       text: "PRogan josh is a type of Indian curry",
       blueText: "more",
       Price: "₹ 500",
+      modalimg: menu_food_three,
     },
     {
+      id: 4,
       img: menu_food_four,
       title: "Summer Rolls",
       text: "Summer rolls wraps cooked noodles",
       blueText: "more",
       Price: "₹ 180",
+      modalimg: menu_food_four,
     },
     {
+      id: 5,
       img: menu_food_five,
       title: "Broccoli Salad",
       text: "Broccoli Salad is a quick salad chock",
       blueText: "more",
       Price: "₹ 300",
+      modalimg: menu_food_five,
     },
     {
+      id: 6,
       img: menu_food_six,
       title: "Fusili Pasta",
       text: "Fusilli is a spiral or corkscrew shaped",
       blueText: "more",
       Price: "₹ 500",
+      modalimg: menu_food_six,
     },
   ];
   return (
@@ -93,7 +107,7 @@ function ItemsList() {
             <div className="menu_food_item_img">
               <img src={item.img} alt="..." />
               <div className="menu_img_btn d-flex justify-content-center">
-                <div className="add_menu_txet">
+                <div className="add_menu_txet" onClick={() => setSmShow_(true)}>
                   <h2>Add</h2>
                 </div>
                 <div className="menu_item_plus text-right">
@@ -102,6 +116,49 @@ function ItemsList() {
               </div>
             </div>
           </Col>
+          <div>
+            <Modal
+              size="sm"
+              show={smShow_}
+              onHide={() => setSmShow_(false)}
+              centered
+              aria-labelledby="example-modal-sizes-title-sm"
+              className="modal_wrapper"
+            >
+              <Modal.Body className="">
+                <div className="d-flex justify-content-center item_modal_img">
+                  <img src={item.modalimg} />
+                </div>
+                <div className="tem_modal_text">
+                  <h1 className="size_20 line_22 color_black">Palak Paneer</h1>
+                </div>
+                <div className="modal_desc_para">
+                  <p>
+                    Palak Paneer is one of the most popular paneer dishes.
+                    Paneer (Indian cottage cheese) is cooked with spinach and
+                    spices in this creamy and flavorful curry. It pairs well
+                    with naan, paratha or jeera rice.
+                  </p>
+                </div>
+                <div className="d-flex justify-content-between">
+                  <div className="d-flex">
+                    <div className="modal-negative-btn">
+                      <button>-</button>
+                    </div>
+                    <div className="modal-negative-btn_">
+                      <button>1</button>
+                    </div>
+                    <div className="modal-negative-btn">
+                      <button>+</button>
+                    </div>
+                  </div>
+                  <div className="show_payment_btn">
+                    <button>Add - ₹ 350 </button>
+                  </div>
+                </div>
+              </Modal.Body>
+            </Modal>
+          </div>
         </Row>
       ))}
     </>
